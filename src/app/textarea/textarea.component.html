@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-form-field>
+      <textarea matInput 
+         placeholder="" (keyup)="getTextValue($event)" (click)="showColor = true" >
+      </textarea>
+    </mat-form-field>
+    <div class="default-colors" *ngIf="showColor">
+      <div class="color" *ngFor="let color of defaultColors" [style.background-color]="color" (click)="pickColor($event)"></div>
+    </div>
+  </mat-card>

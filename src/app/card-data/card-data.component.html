@@ -1,0 +1,3 @@
+<mat-card class="margin" *ngFor="let customer of customers$ | async">
+    <div [ngStyle]="{'background-color':  customer.color}" class="p-3" style="color: white">{{customer.value}}</div>
+  </mat-card>
