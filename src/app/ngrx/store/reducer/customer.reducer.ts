@@ -24,9 +24,6 @@ export const customerReducer = createReducer(
           customers: [...state.customers, customer]
         }
     }
-      // ({...state,
-      //   customers: [...state.customers, customer]
-      // })
       ),
       on(CustomerActions.UpdateCustomer, (state: CustomerState, action) => {
         const updatedData = state.customers.map( customer => { return action.customer.id === customer.id ? action.customer: customer})

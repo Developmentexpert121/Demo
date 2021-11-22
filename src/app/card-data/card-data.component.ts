@@ -29,17 +29,6 @@ export class CardDataComponent implements OnInit {
     this.color.currentColor.subscribe( res =>{
       console.log(res);
       this.showMatCard = res;
-      // if(res == 'All' || res == ''){
-      //   this.showMatCard = ;
-      // }else{
-      //   this.customers = [];
-      //   this.store.select(getDataByColor,{ color }).subscribe( res => {
-      //     for(var i=0; i< res.length; i++){
-      //       this.customers.push(res[i]);
-      //     }
-      //     this.showMatCard = false
-      //   })
-      // }
     })
   }
 

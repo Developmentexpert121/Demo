@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Customer } from '../ngrx/models/customer';
 import { CustomerState } from '../ngrx/store/reducer/customer.reducer';
@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './textarea.component.html',
   styleUrls: ['./textarea.component.scss']
 })
-export class TextareaComponent implements OnInit, AfterViewInit {
+export class TextareaComponent implements OnInit {
   textValue: any = ''
   value = ''
   noteForm: FormGroup;
@@ -55,10 +55,6 @@ export class TextareaComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
-    // console.log(this.text?.nativeElement.value);
   }
 
 }
