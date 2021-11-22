@@ -7,8 +7,8 @@
     </div>
 
     <div *ngIf="showMatCard != 'all' && showMatCard != ''">
-      <mat-card class="margin">
-        <div [ngStyle]="{'background-color':  customer.color}" *ngIf="showMatCard == customer.color" class="p-3" (click)="openDialog(customer?.id)">{{customer.value}}</div>
+      <mat-card class="margin" *ngIf="showMatCard == customer.color">
+        <div [ngStyle]="{'background-color':  customer.color}" class="p-3" (click)="openDialog(customer?.id)">{{customer.value}}</div>
       </mat-card>
     </div>
     
