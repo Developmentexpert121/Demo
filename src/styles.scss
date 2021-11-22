@@ -7,14 +7,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
-  
+  mat-list{
+    padding-top: 0px!important;
+  }
   .example-sidenav-content {
     height: 100px;
     justify-content: center;
   }
   
   .example-sidenav {
-    padding: 20px;
+    width: 140px;
   }
   .example-spacer {
     flex: 1 1 auto;
@@ -26,10 +28,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   mat-card{
       margin:10px!important;
       color: white;
+      border-radius : 10px;
   }
   .margin {
-      width: max-content; 
+      // width: 15%; 
+      max-width: 15%;
       padding: 0!important;
+      float: left;
   }
   
   .default-colors:after {
@@ -40,11 +45,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   
   .default-colors .color {
     float: left;
-    border: 1px solid grey;
-    border-radius: 5px;
-    margin: 5px;
-    height: 30px;
-    width: 30px;
+    // border: 1px solid grey;
+    // border-radius: 5px;
+    // margin: 5px;
+    height: 25px;
+    width: 14.2%;
   }
   
   .default-colors .color2 {

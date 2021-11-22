@@ -1,0 +1,15 @@
+
+<div style="text-align: end">
+    <mat-icon class="text-danger" (click)="deleted(data?.id)" mat-dialog-close>delete</mat-icon>
+    <!-- <mat-icon class="text-danger">delete</mat-icon> -->
+</div>
+<div mat-dialog-content>
+    <mat-form-field>
+        <textarea matInput 
+        placeholder="" [value]="data?.value" (keyup)="getTextValue($event)">
+        </textarea>
+    </mat-form-field>
+    <div class="default-colors">
+        <div class="color" *ngFor="let color of defaultColors" [style.background-color]="color" mat-dialog-close (click)="pickColor($event)"></div>
+    </div></div>
+

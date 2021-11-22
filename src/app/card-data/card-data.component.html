@@ -1,3 +1,30 @@
-<mat-card class="margin" *ngFor="let customer of customers$ | async">
-    <div [ngStyle]="{'background-color':  customer.color}" class="p-3" style="color: white">{{customer.value}}</div>
-  </mat-card>
+<!-- <mat-card class="margin" *ngFor="let customer of customers$ | async" (click)="openDialog()"> -->
+  <div *ngFor="let customer of customers$ | async">
+    <div *ngIf="showMatCard == 'all' || showMatCard == ''">
+      <mat-card class="margin">
+          <div [ngStyle]="{'background-color':  customer.color}" class="p-3" (click)="openDialog(customer?.id)">{{customer.value}}</div>
+      </mat-card>
+    </div>
+
+    <div *ngIf="showMatCard != 'all' && showMatCard != ''">
+      <mat-card class="margin">
+        <div [ngStyle]="{'background-color':  customer.color}" *ngIf="showMatCard == customer.color" class="p-3" (click)="openDialog(customer?.id)">{{customer.value}}</div>
+      </mat-card>
+    </div>
+    
+  </div>
+
+  <!-- <div>
+    <div *ngIf="showMatCard == 'all' || showMatCard == ''">
+      <mat-card class="margin">
+          <div class="p-3" (click)="openDialog('dh')">Hello1</div>
+      </mat-card>
+    </div>
+
+    <div *ngIf="showMatCard != 'all' && showMatCard != ''">
+      <mat-card class="margin">
+        <div class="p-3" (click)="openDialog('nfef')">Hello2</div>
+      </mat-card>
+    </div>
+  </div> -->
+  

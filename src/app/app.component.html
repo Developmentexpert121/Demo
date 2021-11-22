@@ -1,23 +1,29 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller"></p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+    <mat-list >
+      <mat-list-item role="listitem" style="background-color: #ff4081;" class="text-light"><h2 class="mt-2">Filter</h2></mat-list-item>
+      <mat-list-item role="listitem" (click)="sendColor('all')">
+        <mat-icon>done</mat-icon>
+        <span>Select All</span>
+      </mat-list-item>
+    </mat-list>
+    <mat-list role="list" *ngFor="let color of defaultColors">
+      <mat-list-item role="listitem" [ngStyle]="{'background-color': color }" (click)="sendColor(color)">
+        <mat-icon>done</mat-icon>
+        <span>Select</span>
+      </mat-list-item>
+    </mat-list>
   </mat-drawer>
 
   <div class="example-sidenav-content">
     <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>NOTES</span>
+      <mat-icon style="cursor: pointer;" (click)="drawer.toggle()">menu</mat-icon>
+      <span style="margin-left: 30px;">NOTES</span>
       <span class="example-spacer"></span>
 
     </mat-toolbar>
     <app-textarea></app-textarea>
-    <app-card-data></app-card-data>
+    <app-card-data ></app-card-data>
   </div>
 
 </mat-drawer-container>

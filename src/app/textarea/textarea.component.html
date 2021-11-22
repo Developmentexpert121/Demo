@@ -1,10 +1,14 @@
-<mat-card>
+<mat-card >
+  <form [formGroup]="noteForm">
     <mat-form-field>
       <textarea matInput 
-         placeholder="" (keyup)="getTextValue($event)" (click)="showColor = true" >
+         placeholder="Enter Notes" formControlName="notes" (click)="showColor = true">
       </textarea>
     </mat-form-field>
     <div class="default-colors" *ngIf="showColor">
       <div class="color" *ngFor="let color of defaultColors" [style.background-color]="color" (click)="pickColor($event)"></div>
     </div>
+    </form>
   </mat-card>
+
+  
